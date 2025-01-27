@@ -95,6 +95,22 @@ Before you begin, ensure you have met the following requirements:
 
 It should be obvious, but: Using the API will result in request-based costs (it is not part of the ChatGPT / Subscription).
 
+#### Environment Variables
+
+The project uses environment variables for configuration. Create a `.env` file in the root directory with the following variables:
+
+```
+REACT_APP_OPENAI_API_KEY=your_api_key_here
+REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+```
+
+For development, you can also create a `.env.local` file which will take precedence over `.env` and is git-ignored by default.
+
 #### Clone and run
 
 To start using the project, follow these steps:

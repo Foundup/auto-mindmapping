@@ -1,0 +1,540 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Tab Navigation */
+.tab-buttons {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #666;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tab-button.active {
+  color: #4CAF50;
+  font-weight: 500;
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Main Content */
+.app-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Login Container */
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Loading */
+.loading-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* Mindmapping Tab */
+.mindmap-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-section,
+.output-section {
+  margin-bottom: 1.5rem;
+}
+
+.prompt-section h2,
+.output-section h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.create-btn,
+.save-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.create-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.create-btn:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.create-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.save-btn {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.save-btn:hover {
+  background-color: #e8e8e8;
+}
+
+/* Output Header */
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.collapse-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.collapse-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Update existing styles */
+.output-section {
+  margin-bottom: 1.5rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.output-section h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.output-section textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+  margin-top: 0.5rem;
+}
+
+/* Add to existing styles */
+
+.mindmap-section {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mindmap-section h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.mermaid-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  min-height: 200px;
+}
+
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-error {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.error-icon {
+  font-size: 24px;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.error-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.error-subtitle {
+  font-size: 14px;
+  color: #888;
+}
+
+.mermaid-output {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mermaid-output .action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .app-content {
+    padding: 1rem;
+  }
+  
+  .tab-buttons {
+    gap: 0.5rem;
+  }
+  
+  .tab-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .output-section {
+    padding: 0.75rem;
+  }
+  
+  .output-section textarea {
+    min-height: 100px;
+  }
+
+  .mindmap-section {
+    padding: 1rem;
+  }
+
+  .mermaid-container {
+    padding: 10px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .create-btn,
+  .save-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.title-section {
+  text-align: center;
+}
+
+.version {
+  font-size: 12px;
+  color: #666;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.mermaid-output-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.mermaid-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.debug-panel {
+  width: 300px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  height: calc(100vh - 200px);
+  position: sticky;
+  top: 0;
+}
+
+.debug-panel h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.error-message {
+  background: #fff0f0;
+  border: 1px solid #ffcdd2;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: #d32f2f;
+}
+
+.debug-info {
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin: 0;
+}
+
+.action-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.save-btn {
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save-btn:hover {
+  background: #45a049;
+}
+
+.debug-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copy-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 10px;
+  transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+  background: #45a049;
+}
+
+/* Prevent the button click from toggling the details */
+.copy-btn:focus {
+  outline: none;
+}
+
+.copy-btn:active {
+  transform: scale(0.98);
+}
+
+.mermaid-wrapper {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mermaid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #1e1e1e;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mindmap specific styles */
+.mindmap-node rect {
+  fill: #333;
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.mindmap-node text {
+  fill: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.mindmap-node .icon {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.mindmap-branch {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.debug-details {
+  margin-top: 10px;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+.debug-details summary {
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.debug-details pre {
+  margin-top: 10px;
+  background: #222;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  color: #ddd;
+  font-size: 12px;
+  font-family: monospace;
+} 

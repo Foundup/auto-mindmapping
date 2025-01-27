@@ -1,0 +1,353 @@
+.mindmap-container {
+  width: 100%;
+  min-height: 400px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+.prompt-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #3498db;
+  border-radius: 8px;
+  background: #2c3e50;
+  color: #fff;
+  font-size: 14px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.prompt-input:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+.generate-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.generate-btn:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.generate-btn:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+.output-section {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 600px;
+  flex: 1;
+}
+
+.mindmap-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mindmap-error {
+  background: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  border: 1px solid #e74c3c;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.error-icon {
+  font-size: 24px;
+}
+
+.error-content {
+  flex: 1;
+}
+
+.error-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.error-subtitle {
+  color: #bdc3c7;
+  font-size: 12px;
+}
+
+.debug-details {
+  margin-top: 15px;
+  background: #34495e;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.debug-header {
+  padding: 10px 15px;
+  background: #2c3e50;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.debug-header:hover {
+  background: #3d566e;
+}
+
+.copy-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.copy-btn:hover {
+  background: #2980b9;
+}
+
+.debug-info {
+  padding: 15px;
+  margin: 0;
+  background: #2c3e50;
+  color: #ecf0f1;
+  font-family: monospace;
+  white-space: pre-wrap;
+  font-size: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* React Flow specific styles */
+.react-flow__node {
+  font-size: 14px;
+  background: #2c3e50;
+  color: #fff;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  padding: 12px 20px;
+  width: auto;
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.react-flow__node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.react-flow__node.selected {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 2px #e74c3c;
+}
+
+.react-flow__node[data-level="0"] {
+  background: #2c3e50;
+  border-color: #f1c40f;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 16px 24px;
+  min-width: 200px;
+}
+
+.react-flow__node-default {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.react-flow__edge {
+  stroke: #3498db;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 1s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+.react-flow__controls {
+  background: #2c3e50;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.react-flow__controls button {
+  background: #34495e;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.react-flow__controls button:hover {
+  background: #3d566e;
+}
+
+.react-flow__minimap {
+  background: #2c3e50;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+.react-flow__attribution {
+  background: transparent;
+  color: #95a5a6;
+  font-size: 10px;
+}
+
+.react-flow__background {
+  background: #1a1a1a;
+}
+
+.mindmap-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin: 10px;
+  z-index: 5;
+}
+
+.mindmap-edit-btn {
+  background-color: #3498db;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mindmap-edit-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.mindmap-edit-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.mindmap-node-edit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2c3e50;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border: 1px solid #3498db;
+  min-width: 300px;
+}
+
+.mindmap-node-edit textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 12px;
+  background: #34495e;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  color: #fff;
+  padding: 12px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.mindmap-node-edit textarea:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+.mindmap-node-edit button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.mindmap-node-edit button:hover {
+  background-color: #c0392b;
+}
+
+.mindmap-node-edit .buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Snap grid visualization */
+.react-flow__grid {
+  color: rgba(52, 152, 219, 0.1);
+}
+
+.react-flow__grid-dot {
+  fill: rgba(52, 152, 219, 0.1);
+}
+
+.ai-suggestion-panel {
+  background-color: #34495e;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  border: 1px solid #3498db;
+}
+
+.ai-suggestion-panel h3 {
+  color: #ecf0f1;
+  margin-top: 0;
+  font-size: 14px;
+  margin-bottom: 10px;
+} 

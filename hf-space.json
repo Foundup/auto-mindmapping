@@ -1,0 +1,10 @@
+{
+  "title": "AI Mind Mapping",
+  "emoji": "🧠",
+  "colorFrom": "#3498db",
+  "colorTo": "#2ecc71",
+  "sdk": "static",
+  "app_file": "build/index.html",
+  "pinned": false,
+  "license": "MIT"
+} 
